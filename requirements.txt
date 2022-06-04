@@ -1,0 +1,4 @@
+Flask==1.1.2
+soundfile
+transformers==4.6.0
+torch==1.7.1

@@ -1,0 +1,13 @@
+# Install kubectl
+curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/linux/arm64/kubectl
+
+# Install eksctl
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+
+
+# Configure AWS CLI
+aws configure
+
+# Create a cluster
+eksctl create cluster --name asrservice --region eu-west-3 --node-type t2.xlarge --nodes-min 2 --nodes-max 2 
